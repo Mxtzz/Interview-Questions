@@ -1,11 +1,22 @@
 # Interview-Questions
 
-### [HTML](#html)
-### [CSS](#css)
-### [JavaScript](#js)
-### [emmm...](#emmm)
+#### [HTML](#html)
+#### [CSS](#css)
+#### [JavaScript](#js)
+#### [emmm...](#emmm)
 
 ## <span id="html">HTML</span>
+
+##### 1. HTML全称
+>Hyper Text Markup Language   
+超文本标记语言
+
+##### 2. 有几种Doctype？作用？
+>DOCTYPE：Document Type 文档类型    
+用来指定页面所使用的XHTML或HTML的版本。   
+三种DTD（文档类型定义）声明：过渡的（Transition）、严格的（Strict）、框架的（Frameset）。   
+
+##### 3. 
 
 <hr>
 
@@ -25,6 +36,14 @@ css盒模型封装周围的HTML元素，包括：边距、边框、填充和实�
 怪异模式：`box-sizing:border-box`       
 盒子总宽高度=内容区+margin
 
+##### 2. display属性
+
+##### 3. 响应式布局方法
+
+##### 4. css3实现动画
+
+
+
 
 <hr>
 
@@ -37,9 +56,24 @@ css盒模型封装周围的HTML元素，包括：边距、边框、填充和实�
 ##### 2. JavaScript有块级作用域吗？
 >ES5之前没有，ES6提出了这个概念。
 
-##### 3. let和var的区别
+##### 3. let和var的区别？const？
 >var能重复声明，let不能     
 >let的变量作用范围不同，不存在变量提升。
+
+##### 4. 数组去重？
+
+##### 5. 遍历对象属性？
+
+##### 6. call和apply的作用、区别
+
+##### 7. Jasonp
+
+##### 8. Ajax
+
+##### 9. 对ES6的了解
+
+
+
 <hr>
 
 ## <span id="emmm">emmmm... </span>
@@ -69,3 +103,7 @@ SessionStorage仅在当前会话下有效，关闭页面即消失。
 二者一般为5MB，仅在浏览器中保存，不参与服务器通信。    
 购物车？   
 可再次封装对Object和Array有更好的支持。
+
+##### 3. css动画与js动画区别？
+
+##### 4. 排序
