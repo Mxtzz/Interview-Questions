@@ -46,7 +46,8 @@ inherit：从父元素继承display值；
 list-item：作为列表显示；   
 run-in：根据上下文作为块级元素或内联元素显示；    
 table：块级表格，类似<table>，前后有换行符；    
-inline-table：内联表格，前后没换行符；    
+inline-table：内联表格，前后没换行符。    
+
 
 ##### 3. 几种布局的概念   
 >###### ①静态布局   
