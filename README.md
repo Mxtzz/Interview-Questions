@@ -37,7 +37,7 @@ css盒模型封装周围的HTML元素，包括：边距、边框、填充和实�
 怪异模式：`box-sizing:border-box`       
 盒子总宽高度=内容区+margin
 
-##### 2. display属性    
+##### 2. display属性      
 >none：此元素不会被显示；   
 block：显示为块级元素，前后有换行符；   
 inline：内联元素，前后没有换行符，*默认*；    
