@@ -93,7 +93,40 @@ absolute：绝对定位。会随参照对象元素的高度和宽度变化而变
   伪元素加position:absolute;可以画图。    
 
 ##### 9. div垂直居中    
->
+>①利用表格    
+优点：content可以动态改变高度。wrapper里没有足够空间时，content不会被截断。
+```
+<div id="warpper"> 
+  <div id="cell">    
+    <div class="content">Content goes here</div>   
+  </div>   
+</div>
+```   
+
+```
+#warpper{
+  display:table;
+}
+#cell{
+  display: table-cell;
+  vertical-align: middle;
+}
+```     
+>②使用绝对定位    
+对象必须在css中指定固定的高度。   
+优点：适用于所有浏览器。    
+缺点：没有足够空间时，content会消失，滚动条不出现。   
+```
+<div class="content">Content goes here</div>
+```
+```
+#content{
+  position:absolute;
+  top:50%;
+  height: 240px;
+  margin-top: -120px;
+}
+```
 
 
 <hr>
@@ -108,15 +141,60 @@ absolute：绝对定位。会随参照对象元素的高度和宽度变化而变
 >ES5之前没有，ES6提出了这个概念。
 
 ##### 3. let和var的区别？const？
->var能重复声明，let不能     
->let的变量作用范围不同，不存在变量提升。
+>var能重复声明，let不能；var定义的变量可以修改，如果不初始化会输出undefined，不会报错。     
+>let的变量作用范围不同，不存在变量提升。    
+const定义的变量不可以修改，而且必须初始化。
 
-##### 4. 数组去重？
+##### 4. 数组去重？数组合并？   
+>①for循环    
+双层循环，外层循环元素，内层循环时比较值。    
+如果有相同的值则跳过，不相同则push进数组。    
+
+>②利用splice直接在原数组进行操作。（占内存高，速度慢）    
+双层循环，外层循环元素，内层循环时比较值。值相同时，则删去这个值。数组长度记得减1。   
+
+>③利用对象的属性不能相同的特点进行去重。    
+
+>④数组递归去重    
+运用递归思想，先排序，然后从最后开始比较，遇到相同，则删除。    
+
+>⑤利用indexOf以及forEach    
+
+>⑥利用ES6的set    
+set数据结构，它类似于数组，其成员的值都是唯一的。   
+利用Array.from将set结构转换成数组。   
+```
+function arr(array){
+  return Array.from(new Set(array));
+}
+arr([1,1,2,3]);
+```
+
+数组拼接    
+>1.concat()方法    
+组成新的数组    
+```
+function concatArray(arr1,arr2){
+  var arr = arr1.concat(arr2);
+  return arr;
+}
+```
+
+>2.Array.prototype.push.apply()    
+不会产生一个新的数组    
+```
+Array.protype.push.apply(arr1,arr2);
+或者 arr1.push.apply(arr1,arr2);
+或者 [].push.apply(arr1,arr2);
+```
+
 
 ##### 5. 遍历对象属性？
 
 ##### 6. call和apply的作用、区别
+>在特定的作用域中调用函数，等于设置函数体内this对象的值，以扩充函数赖以运行的作用域。   一般来说，this总是指向调用某个方法的对象，但是使用call()和apply()方法时，就会改变this的指向。
 
+>不同点：apply()接收两个参数，一个是函数运行的作用域(this)，另一个是参数数组。
 
 ##### 7. Jasonp
 
@@ -142,6 +220,41 @@ valueOf() 返回数组对象的原始值。
 
 ##### 11. js继承有哪些？原型继承是什么样的？    
 >
+
+##### 12. ul li列表，点击获取li信息   
+>for循环给每个li加上onclick   
+```
+<ul id="test">
+  <li>Apple</li>
+  <li>Xiaomi</li>
+  <li>Samsung</li>
+  <li>OPPO</li>
+</ul>
+```
+```
+window.onload = function(){
+  var arrli = document.getElementById("test").getElementsByTagName("li");
+  for(i=0; i<arrli.length; i++){
+    arrli[i].onclick = function(){
+      console.log(this.innerHTML);
+    }
+  }
+}
+```   
+
+##### 13. prototype?    
+>prototype属性可以向对象添加属性和方法。    
+```
+function employee(name,job,bron){
+  this.name = name;
+  this.job = job;
+  this.born = born;
+}
+employee.prototype.salary = null;
+bill.salary = 20000;
+
+console.log(bill.salary);  //20000
+```
 
 <hr>
 
